@@ -160,7 +160,7 @@ class NHLConverterBot(object):
         if 'twitter.com' == sub.domain:
             self.logger.info("Parsing twitter link: {}".format(sub.url))
             await self.process_twitter(sub, sub.url)
-        if 'streamable.com' == sub.domain:
+        if 'streamable.com' == sub.domain and sr.display_name in ["hockey", "pacefalmd"]:
             await self.process_streamable(sub)
 
     async def process_streamable(self, sub):
